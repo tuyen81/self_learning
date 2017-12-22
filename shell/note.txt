@@ -1,0 +1,8 @@
+1. When you write a shell script, the set command will be helpful in some cases.
+- set -e
+  set -e mean that the script will exit immmediately if a command exits with
+  non-zero status.
+
+- set -x
+  set -x mean that it will print commands and their arguments as they are executed.
+
