@@ -1,0 +1,10 @@
+1. make color syntax on vim
+:syntax on
+
+2. Intall The Ultimate vimrc
+github: https://github.com/amix/vimrc
+
+3. For older vim version, vim-go plugin does not support, so remove them to avoid the
+warning every time we start vim
+
+4.
