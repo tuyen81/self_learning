@@ -1,0 +1,9 @@
+# check more detail about 
+autoreconf in autotool
+The problem related to search library when compiling and runtime 
+(option we use for search library. -L or -I)
+config file of tmux
+Some patches in linux kernel (relate to booting time, BIOS, frequence)
+
+
+
