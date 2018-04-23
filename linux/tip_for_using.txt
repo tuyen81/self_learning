@@ -1,0 +1,9 @@
+1. nohub command 
+When ssh, run with nohub command, the program will be not killed when we exit ssh session.
+(exit ssh with exit or Ctr+D)
+
+2. Check a command existed on the system or not
+use "command" command which is buitl-in on the shell.
+Ex: command -v ls
+
+3.
