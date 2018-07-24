@@ -1,0 +1,5 @@
+- How to use the tmux config file:
+
+Copy the .tmux.conf to the home directory.
+
+$ cp .tmux.conf ~/
