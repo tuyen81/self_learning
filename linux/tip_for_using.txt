@@ -6,4 +6,6 @@ When ssh, run with nohub command, the program will be not killed when we exit ss
 use "command" command which is buitl-in on the shell.
 Ex: command -v ls
 
-3.
+3. Limit the length of path at beginning of prompt:
+Add the below line to bashrc file
+PROMPT_DIRTRIM=1
