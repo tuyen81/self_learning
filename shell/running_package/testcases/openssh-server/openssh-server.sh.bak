@@ -1,0 +1,63 @@
+#!/bin/bash
+#==============================================================================
+# DISCRIPTION: Testing for openssh-server sevice.
+#              Testing and checking runtime status information about "stop", "start",  
+#              "restart" openssh-server service
+#==============================================================================
+
+# Prepare a free network for testing
+. ${CONFIG_DIR}/network.sh
+
+check=0
+
+# Declare variable expected output
+ACTIVE_RUNNING="active (running)"
+INACTIVE_DEAD="inactive (dead)"
+
+# Run command stop ssh service 
+echo 'systemctl stop ssh' > ${log_file} 2>&1
+
+# Gets status ssh after stop service
+echo 'systemctl status -l ssh' >> ${log_file} 2>&1
+
+# Check status ssh after stop service
+if [ -n "`cat ${log_file} | grep "${INACTIVE_DEAD}"`" ]; then
+  # Run command start ssh service
+  echo 'systemctl start ssh' > ${log_file} 2>&1
+
+  # Gets status ssh after start service
+  echo 'systemctl status -l ssh' >> ${log_file} 2>&1
+
+  # Check status ssh after start service
+  if [ -n "`cat ${log_file} | grep "${ACTIVE_RUNNING}"`" ]; then
+    # Run command restart shh service
+    echo 'systemctl restart ssh' > ${log_file} 2>&1
+
+    # Gets status ssh after restart service
+    echo 'systemctl status -l ssh' >> ${log_file} 2>&1
+
+    # Check status ssh after restart service
+    if [ -n "`cat ${log_file} | grep "${ACTIVE_RUNNING}"`" ]; then
+      check=0
+    else
+      check=1
+    fi
+
+  else
+    check=1
+  fi
+
+else
+  check=1
+fi
+
+# Run command ssh to PC-Server
+ssh ${USERNAME}@${des_ip_address}
+
+# Check status ssh to PC-Server
+if [ $? != "0" ]; then
+  check=1
+fi
+
+#Check result of command openssh-server with expected output
+assert_passed $check 0

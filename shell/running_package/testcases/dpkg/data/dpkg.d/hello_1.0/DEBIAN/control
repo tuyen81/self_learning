@@ -1,0 +1,5 @@
+Package: hello
+Architecture: all
+Version: 1.0
+Maintainer: root
+Description: Test dpkg

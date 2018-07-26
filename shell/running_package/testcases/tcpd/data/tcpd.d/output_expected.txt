@@ -1,0 +1,15 @@
+Using network configuration file: /etc/inetd.conf
+
+>>> Rule /etc/hosts.allow line 1:
+daemons:  ALL
+clients:  localhost
+access:   granted
+
+>>> Rule /etc/hosts.deny line 1:
+daemons:  ALL
+clients:  ALL
+access:   denied
+client:   hostname localhost
+client:   address  127.0.0.1
+server:   process  sshd
+access:   granted

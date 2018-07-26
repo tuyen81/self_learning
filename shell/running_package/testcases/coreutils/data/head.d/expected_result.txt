@@ -1,0 +1,5 @@
+This is sample file
+For testing head command
+Use head command
+To print the first 5 line
+Of this sample file

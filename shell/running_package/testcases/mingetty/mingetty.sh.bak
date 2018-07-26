@@ -1,0 +1,32 @@
+#!/bin/bash
+#==============================================================================
+#  DISCRIPTION: Test script is test to autologin system
+#		The actual output is compared with expected output to give result. 
+#==============================================================================
+
+check=0
+
+#Create a mingetty folder to stored messages log
+mkdir -p ${OUTPUT_DIR}/mingetty/
+
+# Create a service folder to stored config file
+mkdir -pv /etc/systemd/system/getty@tty2.service.d/ > ${OUTPUT_DIR}/mingetty/mingetty.log 2>&1
+
+if [ $? != "0" ]; then
+	check=1
+fi
+
+#Create a folder to stored content of autologin.conf file
+touch /etc/systemd/system/getty@tty2.service.d/autologin.conf >> ${OUTPUT_DIR}/mingetty/mingetty.log 2>&1
+echo "[Service]" > /etc/systemd/system/getty@tty2.service.d/autologin.conf 
+echo "ExecStart=" >> /etc/systemd/system/getty@tty2.service.d/autologin.conf 
+echo "ExecStart=-/sbin/mingetty --autologin root --noclear %I" >> /etc/systemd/system/getty@tty2.service.d/autologin.conf 
+
+if [ $? != "0" ]; then
+	check=1
+fi
+
+# Reboot system
+systemctl daemon-reload
+
+assert_passed $? 0

@@ -1,0 +1,67 @@
+#!/bin/bash
+# author: datnd
+#====================================================================================================
+# DESCRIPTION: Testing for running command ls in special folder "rootfs" after running chroot command
+#====================================================================================================
+
+RESULT=1
+
+# prepare for testing
+mkdir -p rootfs/{bin,sbin,lib,usr/lib,etc}
+mount --bind /bin rootfs/bin
+mount --bind /sbin rootfs/sbin
+mount --bind /lib rootfs/lib
+mount --bind /usr/lib rootfs/usr/lib
+mount --bind /etc rootfs/etc
+
+# run step 1
+chroot rootfs
+if [ $? = "0" ]
+then
+  echo "STEP 1 PASSED" >> ${log_file}
+else
+  RESULT=0
+  echo "STEP 1 FAILED" >> ${log_file}
+fi
+# run step 2
+OUTPUT_STEP_2=`ls rootfs`
+echo -e "OUTPUT_STEP_2:\n""${OUTPUT_STEP_2}" >> ${log_file}
+if [ -n "`echo "$OUTPUT_STEP_2" | grep lib`" ]
+then
+if [ -n "`echo "$OUTPUT_STEP_2" | grep bin`" ]
+then
+if [ -n "`echo "$OUTPUT_STEP_2" | grep sbin`" ]
+then
+if [ -n "`echo "$OUTPUT_STEP_2" | grep usr`" ]
+then
+if [ -n "`echo "$OUTPUT_STEP_2" | grep etc`" ]
+then
+  echo "STEP 2 PASSED" >> ${log_file}
+else
+  RESULT=0
+  echo "STEP 2 FAILED" >> ${log_file}
+fi
+else
+  RESULT=0
+fi
+else
+  RESULT=0
+fi
+else
+  RESULT=0
+fi
+else
+  RESULT=0
+fi
+
+# check result after running all steps
+assert_passed ${RESULT} 1
+
+# clean unneeded output after testing
+exit
+umount rootfs/bin
+umount rootfs/sbin
+umount rootfs/lib
+umount rootfs/etc
+umount rootfs/usr/lib
+rm -rf rootfs

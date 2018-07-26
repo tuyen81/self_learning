@@ -1,0 +1,39 @@
+#!/bin/bash
+#==============================================================================
+# DISCRIPTION: Testing for openssh-client service.
+#              The openssh-client script is test to ssh to another Linux PC. Copy a simple.txt
+#              file with 'scp' command  
+#==============================================================================
+
+# Prepare a free network for testing
+. ${CONFIG_DIR}/network.sh
+
+check=0
+
+CONTENTS_FILE="Test openssh-client: scp sample.txt"
+
+# Create a sample.txt file for testing
+touch ${data_dir}/sample.txt
+
+# Stored CONTENTS_FILE to sample.txt file
+echo ${CONTENTS_FILE} > ${data_dir}/sample.txt
+
+# ssh to another Linux PC
+ssh ${USERNAME}@${des_ip_address}
+
+# Check result ssh to another Linux PC
+if [ $? != "0" ]; then
+  check=1
+fi
+
+# Copy file with 'scp'
+scp ${data_dir}/sample.txt ${USERNAME}@${des_ip_address}:~/home
+# Check result ssh to another Linux PC
+if [ $? != "0" ]; then
+  check=1
+fi
+
+#Check result after when execute command with expected output
+assert_passed $check 0
+
+rm -rf ${TESTCASES_DIR}/openssh-client/data

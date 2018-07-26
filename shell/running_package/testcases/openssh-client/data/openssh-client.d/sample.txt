@@ -1,0 +1,1 @@
+Test openssh-client: scp sample.txt

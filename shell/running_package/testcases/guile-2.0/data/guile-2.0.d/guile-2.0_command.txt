@@ -1,0 +1,36 @@
+(+ 1 2)
+
+(define (plus_function a b ) (+ a b))
+(plus_function (* 2 3) 4)
+
+(map 1+ '(1 2 3))
+
+(define (factorial n)
+(if (= n 0)
+1
+(* n (factorial (- n 1)))))
+(factorial 5)
+
+(expt 2 3)
+
+(define hello
+  (lambda (name)
+   (string-append "Hello " name)))
+(hello "Guile-2.0")
+
+(append '(1 2) '(3 4))
+
+(cons 4 '(1 2 3))
+
+(= 2 1)
+
+(eq? (list 3) (list 3))
+
+(if #t
+    "This is true"
+    "This is false")
+(cond ((> 2 2) (error "wrong!"))
+      ((< 2 2) (error "wrong again!"))
+      (else 'Oke))
+
+(iota 10)

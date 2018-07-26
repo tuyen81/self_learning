@@ -1,0 +1,4 @@
+#: src/bye.c:100
+#, c-format
+msgid "Report bugs to <%s>.\n"
+msgstr "Comunicar \"bugs\" a <%s>.\n"

@@ -1,0 +1,61 @@
+# Author: Le Tien
+# Format:
+# PACKAGE_NAME: testcase1 testcase2 testcase3 ...
+# Example
+# busybox: ls cd dir
+# Note
+# PACKAGE_NAME: * => Test all test cases of package
+# PACKAGE_NAME: (NULL) => No test
+
+acl: *
+attr: *
+bash: *
+binutils: *
+bison: *
+coreutils: *
+cracklib-runtime: *
+cron: *
+dbus: *
+diffutils: *
+e2fsprogs: *
+ethtool: *
+expat: *
+file: *
+findutils: *
+flex: *
+gawk: *
+gettext: *
+grep: *
+gzip: *
+htop: *
+iproute2: *
+iputils-arping: *
+iputils-clockdiff: *
+iputils-ping: *
+iputils-tracepath: *
+kbd: *
+kmod: *
+less: *
+logrotate: *
+lsof: *
+ltrace: *
+mingetty: *
+ncurses-bin: *
+ntp: *
+openssl: *
+pciutils: *
+perl: *
+psmisc: *
+sed: *
+strace: *
+sysstat: *
+tar: *
+tcp-wrappers: *
+tzdata: *
+udev: *
+usbutils: *
+util-linux: *
+vim: *
+wget: *
+whichman: *
+xfsprogs: *

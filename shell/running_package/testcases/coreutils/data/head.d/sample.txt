@@ -1,0 +1,7 @@
+This is sample file
+For testing head command
+Use head command
+To print the first 5 line
+Of this sample file
+Compare output to expected result file
+to Show the result of test case

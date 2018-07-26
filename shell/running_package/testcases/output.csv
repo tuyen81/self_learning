@@ -1,0 +1,257 @@
+"Package name","Test case name","Abstract","Changed from default configuration","Test result","Remark"
+acl,acl," Testing for getfacl command.
+ The first, mount a partition with "acl" option 
+ to /mnt mount point then get acl of /mnt/root directory.",No,NG,"Partition 2 does not start on physical sector boundary.
+
+Partition 3 does not start on physical sector boundary.
+
+mount: special device /dev/vda does not exist
+getfacl: /mnt/root: No such file or directory
+umount: /mnt: not mounted"
+at,at," Create sample.sh executable file then run after 1 minute",No,OK,""
+attr,attr," Testing for setfattr and getfattr commands.
+ The first, mount a partition with user_xattr option. 
+ After, create a sample.txt file for testing
+ and set extended attributes of file system object by using setfattr 
+ command and then get extended attributes of file system object
+ by using getfattr command.",No,OK,""
+bash,bash," Use bash command to run a script file and print a string to stdout.",No,OK,""
+bc,bc," Test some calculations then check result of output",No,OK,""
+bind9,bind9," Start, stop and restart bind9 service then check result",No,OK,""
+binutils,addr2line," Testing for addr2line command.
+ The command will convert addresses into file names and line numbers.
+ It convert 80483fb addresses into a.out object file to line numbers.",No,OK,""
+binutils,ar," Testing for ar command.
+ The ar command is used to extracts a archive file 
+ and check list file in the archive file.",No,OK,""
+bison,bison," Testing for bison command.
+ The bison command is used to parse a *.ypp file 
+ and generate a sample.ypp file.",No,OK,""
+bzip2,bzip2," Create sample.txt for testing then compress and decompress using
+ bzip2 command with -z and -d options",No,OK,""
+chkconfig,chkconfig," List status of service, enable service on some levels then
+ Disable service on some runlevels",No,OK,""
+cluster-glue,cluster-glue," Start and stop logd service",No,OK,""
+coreutils,chgrp," Testing for chgrp command.
+ The chgrp command is used to change group ownership of a file",No,OK,""
+coreutils,timeout," Test script is test to "timeout" command.
+ In test script "timeout"command used to time limit when run
+ a sample.sh script print numbers the range from 1 to 5 ",No,OK,""
+coreutils,pwd," Testing for printing name of current/working directory by pwd command",No,OK,""
+coreutils,uniq," Test script is test to "uniq" command.
+ The "uniq" command used to filters out repeated lines in a sample.txt file.
+ The sample.txt file has been stored contents "aa\n aa\n bb\n bb\n bb\n cc\".",No,OK,""
+coreutils,mv," Testing for moving file and folder by  mv command",No,OK,""
+coreutils,basename," Testing for basename command.
+ The basename command is used to strip directory and suffix from 
+ include/stdio.h filename.",No,OK,""
+coreutils,cut," cut.sh tests "cut" command of coreutils package
+ The cut command  to cut parts of a line by byte position, 
+ character and delimiter
+ Use "cut" command to cut input string "Hello world" then the output
+ is printed to stdout after cutting
+ The actual output is compared with expected output to give result.",No,OK,""
+coreutils,shred," Run a shred script with the "shred" command.
+ The shred script securely delete a sample.txt file. The sample.txt file
+ has been stored contents "Hello world".",No,OK,""
+coreutils,nl," Testign for the showing number lines of file by nl command",No,OK,""
+coreutils,mkdir," Testing for creating new folder by mkdir command",No,OK,""
+coreutils,sort," Test script is test to "sort" command.
+ The "sort" is a standard command line program that prints the
+ lines of it's input or concatenation of all files listed in it's
+ argument list in sorted order",No,OK,""
+coreutils,expr," expr.sh is used to test "expr" command of coreutils package.
+ Use "expr" command to prints the value of EXPRESSION to standard output
+ First, Use expr command to find charactor, second Use "expr" command
+ to compare two integer number. Finally, use expr command to execute
+ an addition 
+ Compare output to expected result to show test case pass or fail",No,OK,""
+coreutils,split," Test script is test to "split" command.
+ In test script behavior of "split" command is to generate two
+ files ("xaa" and "xab" files) from sample.txt file. The sample.txt file
+ has been stored contents "Line 1\n Line 2\n to Line 10".",No,OK,""
+coreutils,env," env.sh is used to test "env" command of coreutils package.
+ Use env command to show system Enviroment variable and set a 
+ specific enviroment variable
+ Compare output to expected result to show test case pass or fail",No,OK,""
+coreutils,factor," factor.sh is used to testing "factor" command of coreutils package
+ Use "factor" command to print the prime factors of all specified
+ integer NUMBERs. 
+ If no arguments are specified on the command line, they are 
+ read from standard input
+ Compare output to expected result to show result of testcase",No,OK,""
+coreutils,chmod," Testing for chmod command.
+ The chmod command is used to change the permissions of a file.
+ The first, set permission 664 for a file and then add write permission for other user.",No,OK,""
+coreutils,uname," Test script is test to "uname" command.
+ The "uname" is a command which prints system information like the kernel name",No,OK,""
+coreutils,false," Testing for false command of coreutils package
+ Use command false to exit with a status code indicating failure
+ Check exit status after command false",No,OK,""
+coreutils,ln," Testing for creating a symbolic link file,
+ then check content of symbolic link file.",No,OK,""
+coreutils,md5sum," Testing for computing and check MD5 message digest for "sample.txt" file by md5sum command",No,OK,""
+coreutils,install," install.sh is used to test install command of coreutils package
+ First, The install command install sample.sh script file.
+ Second, run binary file to show result. The script prints
+ "Hello world" to stdout
+ After running install sample.sh script. Run binary file
+ and compare real output to expected output to veriry result",No,OK,""
+coreutils,od," Testing for dumping sample file in octal and decimal format by od command",No,OK,""
+coreutils,tail," Test script is test to "tail" command.
+ In test script use "tail" command to display four line the tail
+ end of a sample.txt file.
+ The sample.txt file has been stored contents "1\n 2\n to 9\n 10".",No,OK,""
+coreutils,fold," Testing for fold command of coreutils package.
+ Use fold command to Wrap input lines in each FILE and 
+ write to standard output
+ First, Create input file for fold command, then run fold command
+ with this input file. Compare output result to expected result
+ to show test case pass or fail",No,OK,""
+coreutils,test," Test script is test to "test" command.
+ In test script use "test" command to evaluates the expression
+ parameter "100 -lt 99".",No,OK,""
+coreutils,wc," Test script is test to "wc" command.
+ The "wc" command used to word count in sample.txt file
+ The sample.txt file has been stored contents "Word 1\n Word 2\n to Word 5".",No,OK,""
+coreutils,stat," Test script is test to "stat" command.
+ In test script behavior of "stat" command is used for displaying
+ status information of Linux files and file systems",No,OK,""
+coreutils,tty," Test script is test to "tty" command.
+ The "tty" command prints the name of it's source of its
+ standard input provided that is a terminal",No,OK,""
+coreutils,seq," Testing for printing a sequence of numbers by seq command",No,OK,""
+coreutils,dd," dd.sh tests "dd" command of coreutils package.
+ input /dev/zero output is sample.img
+ Search a key word in stdout to show result",No,OK,""
+coreutils,expand," expand.sh is used to test "expand" command of coreutils package.
+ Run "expand" command to set tabs number characters apart equal 1.
+ Compare output to expected result to show test case pass or fail",No,OK,""
+coreutils,comm," Testing for comparing two sorted files line by line by comm command",No,OK,""
+coreutils,echo," echo.sh used to test "echo" command of coreutils package.
+ Use echo command to writes its arguments to standard output.
+ Compare output to expected result to show test case pass or fail",No,OK,""
+coreutils,rmdir," Testing removing directory by rmdir command when whether there is a file in the directory or not,
+ if yes then can not remove folder, if no then folder is removed.",No,OK,""
+coreutils,nice," Testing for runinng a program sh file with modified scheduling priority 7",No,OK,""
+coreutils,head," head.sh is to test head command of coreutils package.
+ Use head command to print the first 5 lines of each FILE to
+ standard output by using option -5
+ Compare output to expected result",No,OK,""
+coreutils,touch," Test script is test to "touch" command.
+ In test script "touch" command used to check timestamps of a sample.txt file
+ The sample.txt file is created with size is 0 byte",No,OK,""
+coreutils,du," du.sh is used to test "du" command of coreutils package.
+ Use "du" command to reports the sizes of directory trees inclusive
+ of all of their contents and the sizes of individual files",No,OK,""
+coreutils,tac," Test script is test to "tac" command.
+ The "tac" command is uses reverses the contents of sample.txt file. 
+ The sample.txt file has been stored contents "Hello world".",No,OK,""
+coreutils,dirname," dirname.sh is used to test "dirname" command of coreutils package.
+ Use dirname to show NAME with its last non-slash component
+#	       and trailing slashes removed
+ Compare output to expected result to show test case pass or fail",No,OK,""
+coreutils,truncate," Test script is test to "truncate" command.
+ In test script "truncate" command used to extend size of
+ a sample.txt file from 0 byte to 50 byte ",No,OK,""
+coreutils,dir," dir.sh tests "dir" command of coreutils package.
+ Use dir command to list information about current directory 
+ Search a key word "total" in output to verify result",No,OK,""
+coreutils,chown," Testing for chown command.
+ The chown command is used to change file owner and group from root to toshiba.",No,OK,""
+coreutils,lbracket," lbracket.sh is to test bracket "[" command of coreutils package.
+ Use bracket "[" command to execute comparing two integer number.
+ Compare "1" and "2" then show result to stdout
+ Compare output to expected result to show test case pass or fail",No,OK,""
+coreutils,nproc," Testing for checking number of processing units available by nproc command",No,OK,""
+coreutils,tsort," Test script is test to "tsort" command.
+ The "tsort" is a standard command line performs a topological
+ sort on it's input",No,OK,""
+coreutils,tr," Test script is test to "tr" command. 
+ In test script "tr" command used to replacing and removing
+ specific characters in it's input data set.             ",No,OK,""
+coreutils,df," df.sh tests "df" command of coreutils package.
+ Use "df" command to get full summary of available and 
+ used disk space usage of file system on Linux system. 
+ Search a key word in output to verify result",No,OK,""
+coreutils,paste," Testing for the merging lines of files base on "comma" and "colon" character by paste command",No,OK,""
+coreutils,tee," Test script is test to "tee" command.
+ In test script "tee" command read contents of "ls /usr" command
+ and write to sample.txt file.",No,OK,""
+coreutils,cksum," Testing for checksum and counting the bytes in sample.txt file",No,OK,""
+coreutils,shuf," Test script is test to "shuf" command.
+ The "shuf" command use to generates random permutations from
+ input lines to standard output",No,OK,""
+coreutils,mknod," Testing for making character file "/devfb0" by mknod command,
+ then check attributes of "/devfb0" file.",No,OK,""
+coreutils,sha," Testing for generating of digest functions by sha1sum, sha224sum, sha256sum, sha384sum, 
+ sha512sum commands. Input for testing is "sample.txt" with content "Hello world".",No,OK,""
+coreutils,base64," Testing for base64 command.
+ The first, base64 encodes a file and then it decodes a file with -d option ",No,OK,""
+coreutils,pinky," Testing for displaying information about system and root user by pinky command",No,OK,""
+coreutils,true," Test script is test to "true" command.
+ In test script "true" command exit with a status code indicating
+ success when use "ls" command to check not exist directory",No,OK,""
+coreutils,list_file," Testing for checkign the list and properties of file and folder by ls and vdir commands",No,OK,""
+coreutils,cat," Testing for cat command.
+ The cat command is used to print a file on the standard output.",No,OK,""
+coreutils,join," join.sh is used to test "join" command of coreutils package
+ 1. Create two file having common field, and expected output file
+ 2. Use join command to create joint file
+ 3. Compare joint file and expected output file, update result to
+ result.txt file",No,OK,""
+coreutils,mktemp," Testing for creating a temporary file and directory by mktemp command",No,OK,""
+coreutils,hostid," hostid is used to testing hostid command of coreutils package.
+ Use hostid command to Print the numeric identifier for the 
+ current host
+ Compare the output and expected result to verify the result",No,OK,""
+coreutils,printenv," Testing for showing the values of environment and PATH variables.",No,OK,""
+coreutils,ptx," Testing for producing a permuted index of file contents by ptx command",No,OK,""
+coreutils,sleep," Test script is test to "sleep" command.
+ The "sleep" command use to pauses system for an amount two seconds
+ The actual output is compared with expected output to give result.",No,OK,""
+coreutils,pr," Testing for converting text files for printing by pr command,
+ input is created by dmesg command.",No,OK,""
+coreutils,ask_user," Testing for checking user´s login name by logname command,
+ checking effective userid by logname command,
+ checking the user names of users currently logged 
+ in to the current host by users command.",No,OK,""
+coreutils,readlink," Testing for printing canonical path name for file which is linked to /usr/include by readlink command",No,OK,""
+coreutils,printf," Testing for formatting and printing string and fload data by printf command",No,OK,""
+coreutils,id," id.sh is use to test "id" command of coreutils package.
+ Use "id" command to find an USER ID(UID) or GROUP ID(GID)
+ Compare output to expected result to show test case pass or fail
+ This testcase must run in root to use useradd command",No,OK,""
+coreutils,date," Testing for date command of coreutils package.
+ Get date time of 2147483647 seconds since the epoch (1970-01-01 UTC)",No,OK,""
+coreutils,groups," groups.sh is used to testing groups command of coreutils package
+ Run command groups root to show which group user "root" is
+ Search keyword of output to check result",No,OK,""
+coreutils,link," Testing for creating link file to a file, 
+ checking content of link file,
+ then unlink "newlink"file.",No,OK,""
+coreutils,sum," Test script is test to "sum" command.
+ The "sum" command is uses two different algorithms for
+ calculating the checksum of sample.txt file. The sample.txt file
+ has been stored contents "Hello world".",No,OK,""
+coreutils,rm," Testing for removing file sample.txt by rm command",No,OK,""
+coreutils,fmt," Testing for fmt command.
+ Use fmt command to Reformat each paragraph in the FILE(s),
+ writing to standard output
+ First, Create input file sample.txt, then run fmt command using
+ sample.txt file
+ Compare output result to expected output to check result",No,OK,""
+coreutils,who," Test script is test to "who" command.
+ The "who" command gets information about all users who
+ are currently logged in system",No,OK,""
+coreutils,cp," Testing for cp command.
+ In test script cp command used to make copies directory "testing_cp_command" to "/root".",No,OK,""
+coreutils,csplit," Test script is test to "csplit" command.
+ In test script behavior of "csplit" command is splits a sample.txt file
+ into sections, based on context lines.
+ The sample.txt file has been stored contents "Line 1\n Line 2\n to Line 9\n Line 10".",No,OK,""
+cpio,cpio," Create 2 temp files then create an archive file include 2 temp file
+ Extract archived file to 2 temp file",No,OK,""
+cracklib-runtime,cracklib-check," Testing for cracklib-check command.
+ The cracklib-check command is used to check a list of passwords 
+ from stdin and check output is "OK" or "it is based on a dictionary word".",No,OK,""

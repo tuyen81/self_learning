@@ -1,0 +1,5 @@
+f: /namei_link_file
+ d /
+ l namei_link_file -> /namei_orig_file
+   d /
+   - namei_orig_file
